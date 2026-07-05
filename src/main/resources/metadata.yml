@@ -1,0 +1,101 @@
+resources:
+  - name: contacts
+    entityClass: com.example.domain.Contact
+    endpoint: /api/metadata/contacts
+    searchableFields:
+      - name
+      - email
+      - type
+    sortableFields:
+      - name
+      - email
+      - type
+    defaultSort:
+      - name:asc
+    joins: []
+    allowedOperators:
+      - eq
+      - contains
+    displayFields:
+      - id
+      - name
+      - email
+      - type
+    maxPageSize: 50
+    fields:
+      - name: id
+        type: integer
+        searchable: false
+        sortable: true
+        operators:
+          - eq
+      - name: name
+        type: string
+        searchable: true
+        sortable: true
+        operators:
+          - eq
+          - contains
+      - name: email
+        type: string
+        searchable: true
+        sortable: true
+        operators:
+          - eq
+          - contains
+      - name: type
+        type: string
+        searchable: true
+        sortable: true
+        operators:
+          - eq
+          - contains
+  - name: accounts
+    entityClass: com.example.domain.Account
+    endpoint: /api/metadata/accounts
+    searchableFields:
+      - name
+      - type
+      - contactId
+    sortableFields:
+      - name
+      - type
+    defaultSort:
+      - name:asc
+    joins: []
+    allowedOperators:
+      - eq
+      - contains
+    displayFields:
+      - id
+      - name
+      - type
+      - contactId
+    maxPageSize: 50
+    fields:
+      - name: id
+        type: integer
+        searchable: false
+        sortable: true
+        operators:
+          - eq
+      - name: name
+        type: string
+        searchable: true
+        sortable: true
+        operators:
+          - eq
+          - contains
+      - name: type
+        type: string
+        searchable: true
+        sortable: true
+        operators:
+          - eq
+          - contains
+      - name: contactId
+        type: integer
+        searchable: true
+        sortable: true
+        operators:
+          - eq
