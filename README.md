@@ -14,6 +14,36 @@ You can run your application in dev mode that enables live coding using:
 
 > **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at <http://localhost:8080/q/dev/>.
 
+## Testing the application using API testing client
+
+You can test the application using the following curl commands:
+
+### Contacts
+
+```bash
+curl --location 'http://localhost:8080/api/generic/contacts/search' \
+--header 'Content-Type: application/json' \
+--data '{
+  "page": {
+    "page": 0,
+    "pageSize": 20
+  }
+}'
+```
+
+### Accounts
+
+```bash
+curl --location 'http://localhost:8080/api/generic/accounts/search' \
+--header 'Content-Type: application/json' \
+--data '{
+  "page": {
+    "page": 0,
+    "pageSize": 20
+  }
+}'
+```
+
 ## Packaging and running the application
 
 The application can be packaged using:
